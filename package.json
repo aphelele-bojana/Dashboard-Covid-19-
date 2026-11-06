@@ -1,0 +1,31 @@
+{
+  "name": "dashboard-covid-19-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jasmine --config=spec/support/jasmine.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aphelele-bojana/Dashboard-Covid-19-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/aphelele-bojana/Dashboard-Covid-19-/issues"
+  },
+  "homepage": "https://github.com/aphelele-bojana/Dashboard-Covid-19-#readme",
+  "devDependencies": {
+    "jasmine": "^7.0.0",
+    "jsdom": "^29.1.1"
+  },
+  "dependencies": {
+    "chart.js": "^4.6.1"
+  }
+}
