@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COVID-19 Early Outbreak Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div><p class="eyebrow">PUBLIC HEALTH RESEARCH</p><h1>COVID-19 Dashboard</h1>
+      <p>Early outbreak analysis · February–March 2020</p></div>
+    <span class="status">Historical dataset</span>
+  </header>
+  <main class="container">
+    <section class="filters panel">
+      <div><label for="countrySelect">Country</label><select id="countrySelect"><option>Loading...</option></select></div>
+      <div><label for="startDate">Start date</label><input type="date" id="startDate" min="2020-02-01" max="2020-03-31" value="2020-02-01"></div>
+      <div><label for="endDate">End date</label><input type="date" id="endDate" min="2020-02-01" max="2020-03-31" value="2020-03-31"></div>
+      <button id="resetFilter" type="button">Reset filters</button>
+    </section>
+    <p id="message" class="message" role="status" aria-live="polite"></p>
+    <section class="metrics-grid">
+      <article class="metric-card confirmed"><p>Confirmed cases</p><h2 id="confirmedCases">—</h2><span>Cumulative total</span></article>
+      <article class="metric-card deaths"><p>Deaths</p><h2 id="totalDeaths">—</h2><span>Cumulative total</span></article>
+      <article class="metric-card recovered"><p>Recoveries</p><h2 id="totalRecovered">—</h2><span>Cumulative total</span></article>
+      <article class="metric-card active"><p>Active cases</p><h2 id="activeCases">—</h2><span>Confirmed − deaths − recoveries</span></article>
+    </section>
+    <section class="panel chart-panel">
+      <div class="section-heading"><div><h2>Outbreak trends</h2><p>Cumulative confirmed cases, deaths and recoveries</p></div></div>
+      <div class="chart-container"><canvas id="trendChart" aria-label="Line chart of COVID-19 trends"></canvas></div>
+    </section>
+    <section class="panel chart-panel">
+      <div class="section-heading"><div><h2>New confirmed cases</h2><p>Average daily increase between consecutive observations</p></div></div>
+      <div class="chart-container"><canvas id="dailyChart" aria-label="Bar chart of average daily new cases"></canvas></div>
+      <p class="chart-note">The supplied dataset contains observations on selected dates, not every day. Bars show the cumulative increase divided by the number of days between observations; they are averages, not exact daily reported counts.</p>
+    </section>
+    <section class="panel insight-panel"><h2>Country insight</h2><p id="countryInsight">Loading country insights...</p></section>
+    <footer><p>Source: COVID-19 Data Repository by Johns Hopkins CSSE</p><p>Period covered: 1 February – 31 March 2020 · For historical analysis only</p></footer>
+  </main>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
